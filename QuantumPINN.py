@@ -64,34 +64,7 @@ setup_environment()
 
 
 # ─────────────────────────────────────────────
-# 3. DEPENDENCY CHECK
-# ─────────────────────────────────────────────
-
-def check_install(package, import_name=None):
-    """Install *package* via pip if *import_name* cannot be imported."""
-    import_name = import_name or package
-    try:
-        __import__(import_name)
-    except ImportError:
-        print(f"[env] Installing missing package: {package}")
-        import subprocess
-        result = subprocess.run(
-            [sys.executable, "-m", "pip", "install", "-q",
-             "--break-system-packages", package],
-            capture_output=True, text=True,
-        )
-        if result.returncode != 0:
-            subprocess.check_call(
-                [sys.executable, "-m", "pip", "install", "-q", package]
-            )
-
-for pkg, imp in [("torch", "torch"), ("scipy", "scipy"),
-                 ("numpy", "numpy"), ("matplotlib", "matplotlib")]:
-    check_install(pkg, imp)
-
-
-# ─────────────────────────────────────────────
-# 4. IMPORTS 
+# 3. IMPORTS 
 # ─────────────────────────────────────────────
 
 import torch
@@ -104,7 +77,7 @@ from scipy.optimize import fsolve
 
 
 # ─────────────────────────────────────────────
-# 5. OUTPUT HELPER
+# 4. OUTPUT HELPER
 # ─────────────────────────────────────────────
 
 def save_or_show(fig, filename):
@@ -140,7 +113,7 @@ def _output_dir():
 
 
 # ─────────────────────────────────────────────
-# 6. CONFIGURATION
+# 5. CONFIGURATION
 # ─────────────────────────────────────────────
 
 # Explicit device definition for Cloud/GPU support
@@ -154,7 +127,7 @@ LR       = 1e-3
 
 
 # ─────────────────────────────────────────────
-# 7. MODEL & PHYSICS
+# 6. MODEL & PHYSICS
 # ─────────────────────────────────────────────
 
 class QuantumPINN(nn.Module):
@@ -202,7 +175,7 @@ def get_analytical_energy(system):
 
 
 # ─────────────────────────────────────────────
-# 8. TRAIN + EVALUATE
+# 7. TRAIN + EVALUATE
 # ─────────────────────────────────────────────
 
 def run_system(system):
@@ -291,7 +264,7 @@ def run_system(system):
 
 
 # ─────────────────────────────────────────────
-# 9. MAIN
+# 8. MAIN
 # ─────────────────────────────────────────────
 
 if __name__ == "__main__":
