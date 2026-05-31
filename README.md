@@ -1,4 +1,4 @@
-# Quantum PINN: Solving the Schrödinger Equation ⚛
+# Quantum PINN: Solving the Schrödinger Equation 
 
 This project is a Physics-Informed Neural Network (PINN) built with PyTorch. It solves the 1D time-independent Schrödinger equation for both infinite and finite square wells to find the ground state energy and wavefunction.
 
