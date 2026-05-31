@@ -43,7 +43,6 @@ $$\mathcal{L}_{total} = \mathcal{L}_{PDE} + 100.0 \times \mathcal{L}_{norm}$$
 * **Epochs:** 8000
 
 ## Requirements
-The script auto-installs missing dependencies via `pip` if they are not found, but the core stack is:
 * `torch`
 * `numpy`
 * `scipy`
