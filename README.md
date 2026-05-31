@@ -2,6 +2,9 @@
 
 This project is a Physics-Informed Neural Network (PINN) built with PyTorch. It solves the 1D time-independent Schrödinger equation for both infinite and finite square wells to find the ground state energy and wavefunction.
 
+<img width="325" height="175" alt="pinn_infinite_well" src="https://github.com/user-attachments/assets/1b6a86d5-ce4d-4e4d-a669-5f481a964741" />
+<img width="325" height="175" alt="pinn_finite_well" src="https://github.com/user-attachments/assets/77afe7ce-e08c-457f-a586-8ad7f6325f55" />
+
 ## Features
 
 * **Physics-Informed Loss:** Uses automatic differentiation to compute analytical derivatives, minimizing the residual of the Schrödinger equation.
